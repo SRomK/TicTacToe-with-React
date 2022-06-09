@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const TicTacToe = (props) => {
+const TicTacToe = props => {
 	const [value, setValue] = useState("");
 
-	const turnSelection = (turn) => {
+	const turnSelection = turn => {
 		if (value == "" && turn == true) {
 			setValue("X");
 		} else if (value == "" && turn == false) {
@@ -30,7 +30,7 @@ TicTacToe.propTypes = {
 	turn: PropTypes.bool,
 	position: PropTypes.number,
 	continueGame: PropTypes.func,
-	changeTurn: PropTypes.func,
+	changeTurn: PropTypes.func
 };
 
 export default TicTacToe;

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
-import TicTacToe from "./tictactoe.jsx";
-// QUEDAN DETALLES POR ARREGLAR PERO TENIA QUE SUBIRLO
+import TicTacToe from "./ticTacToe.jsx";
+
 const Home = () => {
 	const [turn, setTurn] = useState(true);
 	const [board, setboard] = useState(Array(9).fill(null));
@@ -26,11 +26,11 @@ const Home = () => {
 		}
 	};
 
-	const changeTurn = (turn) => {
+	const changeTurn = turn => {
 		setTurn(!turn);
 	};
 
-	const setVictory = (turnValue) => {
+	const setVictory = turnValue => {
 		const WINNINGOPTIONS = [
 			[0, 1, 2],
 			[3, 4, 5],
@@ -39,7 +39,7 @@ const Home = () => {
 			[1, 4, 7],
 			[2, 5, 8],
 			[0, 4, 8],
-			[2, 4, 6],
+			[2, 4, 6]
 		];
 
 		for (let i in WINNINGOPTIONS) {
